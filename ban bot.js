@@ -63,10 +63,6 @@ function parseBroadcasterId(message) {
     }
   });
   
-  client.on('close', () => {
-    console.log('Connection closed');
-  });
-  
   function isMessageFromChannel(message) {
     return message.includes('PRIVMSG');
   }
@@ -83,7 +79,7 @@ function parseBroadcasterId(message) {
     const regex = new RegExp(BANNED_WORDS.join('|'), 'i');
     return regex.test(content);
   }
-  
+    
   async function getChannelId(username) {
     try {
       const response = await axios.get(`https://api.twitch.tv/helix/users?login=${username}`, {
