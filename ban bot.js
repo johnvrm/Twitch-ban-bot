@@ -3,8 +3,8 @@ const axios = require('axios');
 
 const BOT_USERNAME = 'nome do usuário';
 const BOT_PASSWORD = 'oauth';
-const CHANNELS = ['#channel1', '#channel2', '#channel3']; // Add more channels as needed
-const BANNED_WORDS = ['palavra1', 'palavra2', 'palavra3']; // Add your list of banned words
+const CHANNELS = ['#channel1', '#channel2', '#channel3']; // Adicione quantos canais você precisar, só seguir o mesmo padrão
+const BANNED_WORDS = ['palavra1', 'palavra2', 'palavra3']; // Adicione as palavras aqui, pode colocar quantas quiser
 
 const server = 'irc.chat.twitch.tv';
 const port = 6667;
@@ -51,8 +51,8 @@ function parseBroadcasterId(message) {
     
       if (containsBannedWord(content)) {
         console.log(`Banned word detected from ${sender}: ${content}`);
-        const moderatorId = await getChannelId(BOT_USERNAME); // Use the bot's username to get its user ID
-        const channelId = await getChannelId(channelName); // aqui precisa pegar o canal da streamer que recebeu a msg para banir neste canal
+        const moderatorId = await getChannelId(BOT_USERNAME); // Ele vai substituir o BOT_USERNAME com seu nick que deixou lá em cima, seja seu nick pessoal, ou algum bot seu
+        const channelId = await getChannelId(channelName); // Vai pegar o canal onde ocorreu a mensagem do bot
         if (channelId) {
           const userId = await getChannelId(sender); 
           if (userId) {
@@ -85,7 +85,7 @@ function parseBroadcasterId(message) {
       const response = await axios.get(`https://api.twitch.tv/helix/users?login=${username}`, {
         headers: {
           'Client-ID': 'Client-ID',
-          'Authorization': 'Bearer Acess_Token'
+          'Authorization': 'Bearer Acess_Token'        //Vai apenas substituir o Acess_Token com seu Token, Bearer e as aspas devem ficar
         }
       });
   
@@ -115,13 +115,13 @@ function parseBroadcasterId(message) {
     const body = {
       'broadcaster_id': channelId,
       'data': { 'user_id': userId, 'reason': 'Bot de auto divulgacao' },
-      'moderator_id': moderatorId // Include the moderator's user ID
+      'moderator_id': moderatorId
     };
     
     try {
       const response = await axios.post(url, body, {
         headers: {
-          'Client-ID': 'Client ID',
+          'Client-ID': 'Client ID',        //No Client_ID você substituirá com o seu Client-iD, mantenha das aspas
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
         }
