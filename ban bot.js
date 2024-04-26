@@ -140,3 +140,5 @@ function parseBroadcasterId(message) {
       }
     }
   }
+
+(`setTimeout(connectToServer, 100);`)
