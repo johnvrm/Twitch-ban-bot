@@ -12,14 +12,16 @@ const port = 6667;
 const client = new net.Socket();
 
 client.on('data', async data => {
-    const message = data.toString().trim();
-  
-  
-  // Parse JOIN message to get broadcaster's ID
-  if (message.includes('JOIN')) {
-    const channelId = parseBroadcasterId(message);
-    console.log(`Broadcaster's channel ID: ${channelId}`);
-  }
+  const message = data.toString().trim();
+
+// Parse JOIN message to get broadcaster's ID
+if (message.includes('JOIN')) {
+  const channelId = parseBroadcasterId(message);
+  console.log(`Broadcaster's channel ID: ${channelId}`);
+} else if (message.startsWith('PING')) {
+  // If server sends a PING message, respond with a PONG message
+  client.write('PONG :tmi.twitch.tv\r\n');
+}
 });
   
 function parseBroadcasterId(message) {
@@ -140,5 +142,3 @@ function parseBroadcasterId(message) {
       }
     }
   }
-
-(`setTimeout(connectToServer, 100);`)
