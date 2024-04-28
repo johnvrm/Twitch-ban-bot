@@ -20,6 +20,10 @@ Antes de usar o bot, é necessário configurar algumas variáveis no arquivo ind
  - **BANNED_WORDS**: Uma matriz contendo as palavras proibidas que, se encontradas em uma mensagem, resultarão no banimento do usuário que a enviou.
 Além disso, é necessário substituir 'Client-ID' e 'Acess_Token' pelos valores reais fornecidos pela Twitch para acesso à API.
 
+Sites para pegar o oauth e o Acess Token
+https://twitchapps.com/tmi/
+https://twitchtokengenerator.com/
+
 ### Uso
 Para iniciar o bot, execute o seguinte comando no diretório do projeto:
 
@@ -33,7 +37,3 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir problemas ou env
 
 ### Licença
 Este projeto está licenciado sob a [Licença MIT](https://opensource.org/license/mit).
-
-Sites para pegar o oauth e o Acess Token
-https://twitchapps.com/tmi/
-https://twitchtokengenerator.com/
