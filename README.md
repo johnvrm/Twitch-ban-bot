@@ -18,7 +18,7 @@ Antes de usar o bot, é necessário configurar algumas variáveis no arquivo ind
  - **BOT_PASSWORD**: O token do bot.
  - **CHANNELS**: Uma matriz contendo os canais que o bot deve monitorar.
  - **BANNED_WORDS**: Uma matriz contendo as palavras proibidas que, se encontradas em uma mensagem, resultarão no banimento do usuário que a enviou.
-Além disso, é necessário substituir 'Client-ID', 'Acess_Token', e 'Client ID' pelos valores reais fornecidos pela Twitch para acesso à API.
+Além disso, é necessário substituir 'Client-ID' e 'Acess_Token' pelos valores reais fornecidos pela Twitch para acesso à API.
 
 ### Uso
 Para iniciar o bot, execute o seguinte comando no diretório do projeto:
