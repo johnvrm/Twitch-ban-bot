@@ -1,3 +1,33 @@
-Para poder usar o bot, você precisará criar um aplicativo usando o Dev tools da Twitch https://dev.twitch.tv/console
-Você precisará do Client ID e o Acess Token com permissão de ban para poder usar, para usar o IRC, apenas o seu usuário e oauth servem https://twitchapps.com/tmi/
-É possível usar ferramentas como o https://twitchtokengenerator.com para obter o Acess Token, recomendável você mesmo usar um js ou python para obter, mas quebra galho, lembrando, os Acess Token expiram, necessita refazer de tempo em tempo
+Twitch Chat Bot
+Este é um bot de chat para Twitch que monitora mensagens em canais específicos e bane usuários que usam palavras proibidas.
+
+Instalação
+Para instalar este projeto, siga estas etapas:
+
+Certifique-se de ter o Node.js instalado em seu sistema.
+Clone este repositório para o seu ambiente local.
+No diretório do projeto, execute o seguinte comando para instalar as dependências:
+bash
+Copy code
+npm install
+Configuração
+Antes de usar o bot, é necessário configurar algumas variáveis no arquivo index.js:
+
+ - **BOT_USERNAME**: O nome de usuário do bot.
+ - **BOT_PASSWORD**: O token do bot.
+ - **CHANNELS**: Uma matriz contendo os canais que o bot deve monitorar.
+ - **BANNED_WORDS**: Uma matriz contendo as palavras proibidas que, se encontradas em uma mensagem, resultarão no banimento do usuário que a enviou.
+Além disso, é necessário substituir 'Client-ID' e 'Acess_Token' pelos valores reais fornecidos pela Twitch para acesso à API.
+
+###Uso
+Para iniciar o bot, execute o seguinte comando no diretório do projeto:
+
+node index.js
+O bot se conectará aos servidores IRC da Twitch e monitorará as mensagens nos canais especificados. Ele banirá automaticamente qualquer usuário que enviar uma mensagem contendo uma das palavras proibidas.
+
+###Contribuição
+Contribuições são bem-vindas! Sinta-se à vontade para abrir problemas ou enviar solicitações pull.
+
+###Licença
+Este projeto está licenciado sob a Licença MIT.
+
