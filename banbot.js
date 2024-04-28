@@ -123,7 +123,7 @@ function parseBroadcasterId(message) {
     try {
       const response = await axios.post(url, body, {
         headers: {
-          'Client-ID': 'Client ID',        //No Client_ID você substituirá com o seu Client-iD, mantenha das aspas
+          'Client-ID': 'Client-ID',        //No Client-ID você substituirá com o seu Client-iD, mantenha das aspas
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
         }
@@ -142,3 +142,8 @@ function parseBroadcasterId(message) {
       }
     }
   }
+
+// Function to send PONG message
+function sendPongMessage() {
+    client.write('PONG :tmi.twitch.tv\r\n');
+}
