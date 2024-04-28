@@ -34,3 +34,6 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir problemas ou env
 ### Licença
 Este projeto está licenciado sob a [Licença MIT](https://opensource.org/license/mit).
 
+Sites para pegar o oauth e o Acess Token
+https://twitchapps.com/tmi/
+https://twitchtokengenerator.com/
